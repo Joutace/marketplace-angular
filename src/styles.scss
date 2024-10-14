@@ -1,0 +1,55 @@
+@import "bootstrap/scss/bootstrap";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --blue-500: #0755dc;
+  --blue-700: #1b51d1;
+
+  --black-100: #353945;
+  --black-200: #1a1c1e;
+  --black-700: #17191c;
+  --black-800: #121418;
+  --black-900: #111315;
+
+  --gray-100: #fcfcfd;
+  --gray-200: #bec2cb;
+  --gray-300: #babec9;
+  --gray-350: #8a8e97;
+  --gray-400: #868c9c;
+  --gray-500: #777e90;
+  --gray-800: #242c3d;
+
+  --white: #ffffff;
+  --black: #000000;
+
+  --font-title: "DM Sans", sans-serif;
+  --font-content: "Poppins", sans-serif;
+
+  --background-light: #f8f9fa;
+  --background-dark: #111315;
+  --background-gray: #f5f4fe;
+  --success: #029e3e;
+  --primary: #0857de;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background-color: var(--background-light) !important;
+  font: 400 16px var(--font-title) !important;
+  color: var(--black) !important;
+}
