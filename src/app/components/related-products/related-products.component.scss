@@ -1,0 +1,45 @@
+:host {
+  padding-inline: var(--padding-inline);
+  text-align: center;
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: 500;
+  line-height: 54px;
+ }
+
+.card {
+  max-width: 285px;
+  color: var(--black-150);
+  .card-body {
+    background-color: var(--background-grey);
+    row-gap: 8px;
+    h5 {
+      font-size: 24px;
+      font-weight: 600 !important;
+      line-height: 28.8px;
+    }
+    p {
+      font-size: 16px;
+      font-weight: 500 !important;
+      line-height: 24px;
+      color: var(--gray-370);
+    }
+
+    .price {
+      gap: 16px;
+      h3 {
+        font-size: 20px;
+        font-weight: 600 !important;
+        line-height: 30px;
+      }
+      span {
+        font-size: 16px;
+        line-height: 24px;
+        text-decoration: line-through;
+        color: var(--gray-320);
+      }
+    }
+  }
+}
