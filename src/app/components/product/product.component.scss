@@ -1,0 +1,16 @@
+:host {
+  align-self: center;
+  display: block;
+  width: 100%;
+  max-width: 1240px;
+  padding-bottom: 66px;
+}
+
+.list-group {
+  gap: 32px;
+  img {
+    border-radius: 10px;
+    width: 76px;
+    height: 80px;
+  }
+}
