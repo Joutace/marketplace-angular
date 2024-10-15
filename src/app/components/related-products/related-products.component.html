@@ -1,21 +1,25 @@
-<h1>Produtos relacionados</h1>
+<div class="border-top pt-4">
+  <h1>Produtos relacionados</h1>
 
-<div class="d-flex justify-content-center gap-4 mt-4">
-  @for( card of cards; track $index){
-  <div class="card text-start border-0 rounded-0" style="width: 18rem">
-    <img
-      src="assets/img/image-3.png"
-      class="card-img-top object-fit-contain rounded-0"
-      alt=""
-    />
-    <div class="card-body">
-      <h5 class="card-title">Lolito</h5>
-      <p class="card-text m-0 my-2">Sofá estiloso</p>
-      <div class="d-flex align-items-center price">
-        <h3>R$ 7.000,00</h3>
-        <span>R$ 14.000,00</span>
+  <div
+    class="d-flex justify-content-center gap-4 mt-4 overflow-auto cards-wrapper"
+  >
+    @for( card of cards; track $index){
+    <div class="card text-start border-0 rounded-0" style="width: 18rem">
+      <img
+        src="assets/img/image-3.png"
+        class="card-img-top object-fit-contain rounded-0"
+        alt=""
+      />
+      <div class="card-body">
+        <h5 class="card-title">Lolito</h5>
+        <p class="card-text m-0 my-2">Sofá estiloso</p>
+        <div class="d-flex align-items-center price">
+          <h3>R$ 7.000,00</h3>
+          <span>R$ 14.000,00</span>
+        </div>
       </div>
     </div>
+    }
   </div>
-  }
 </div>

@@ -1,10 +1,11 @@
 :host {
   display: block;
   justify-content: center;
-  padding-inline: var(--padding-inline);
   text-align: justify;
   color: var(--gray-320);
-  padding-inline: var(--padding-inline);
+  align-self: center;
+  width: 100%;
+  padding-bottom: 66px;
 }
 
 .nav-list {
@@ -23,6 +24,7 @@
   }
 }
 .description {
+  max-width: 1026px;
   padding-inline: 106px;
 
   p {
