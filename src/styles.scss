@@ -27,7 +27,7 @@
   --white: #ffffff;
   --black: #000000;
 
-  --font-title: "DM Sans", sans-serif;
+  --font-title: "Montserrat", sans-serif;
   --font-content: "Poppins", sans-serif;
 
   --background-light: #f8f9fa;
@@ -50,6 +50,15 @@ body {
 
 body {
   background-color: var(--background-light) !important;
-  font: 400 16px var(--font-title) !important;
+  font: 400 16px var(--font-content) !important;
   color: var(--black) !important;
+}
+
+h6,
+h5,
+h4,
+h3,
+h2,
+h1 {
+  margin-bottom: 0 !important;
 }

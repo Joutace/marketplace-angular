@@ -1,0 +1,26 @@
+header h1 {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 41.45px;
+  text-align: left;
+  font: var(--font-title) !important;
+}
+
+.nav-list {
+  max-width: 430px;
+  gap: 75px;
+  display: flex;
+  margin-bottom: 0;
+
+  li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: var(--black);
+  }
+}
+
+.icons {
+  gap: 45px;
+}
