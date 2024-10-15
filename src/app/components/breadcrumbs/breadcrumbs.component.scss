@@ -1,0 +1,28 @@
+.active {
+  display: flex;
+  align-items: center;
+  height: 37px;
+  padding-left: 14px;
+  border-left: solid 2px var(--gray-320);
+  color: var(--black);
+}
+
+nav {
+  padding-inline: 100px;
+}
+ol {
+  margin: 0 !important;
+  li {
+    color: var(--gray-320);
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    line-height: 24px;
+    margin-right: 14px;
+  }
+  li:before {
+    height: 20px;
+    width: 20px;
+    margin-right: 24px;
+  }
+}
