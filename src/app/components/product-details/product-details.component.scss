@@ -1,0 +1,41 @@
+:host {
+  display: block;
+  justify-content: center;
+  padding-inline: var(--padding-inline);
+  text-align: justify;
+  color: var(--gray-320);
+  padding-inline: var(--padding-inline);
+}
+
+.nav-list {
+  display: flex;
+  max-width: 650px;
+  gap: 54px;
+  margin-bottom: 0;
+  text-align: left;
+
+  li a {
+    color: var(--gray-320);
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 36px;
+  }
+}
+.description {
+  padding-inline: 106px;
+
+  p {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+}
+
+.images {
+  img {
+    width: 50%;
+    max-width: 605px;
+    border-radius: 20px;
+  }
+}
