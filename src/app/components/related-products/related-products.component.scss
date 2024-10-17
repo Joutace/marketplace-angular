@@ -8,11 +8,21 @@ h1 {
   line-height: 54px;
 }
 
+button {
+  width: 245px;
+  height: 48px;
+  border: solid 1px var(--primary);
+  color: var(--primary);
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
 .cards-wrapper {
   width: 100%;
   padding-inline: var(--padding-inline);
   overflow-y: auto;
-
   .card {
     max-width: 285px;
     color: var(--black-150);
