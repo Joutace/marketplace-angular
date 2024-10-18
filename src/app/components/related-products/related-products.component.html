@@ -4,22 +4,26 @@
   <div
     class="d-flex justify-content-center gap-4 mt-4 overflow-auto cards-wrapper"
   >
-    @for( card of cards; track $index){
-    <div class="card text-start border-0 rounded-0" style="width: 18rem">
-      <img
-        src="assets/img/image-3.png"
-        class="card-img-top object-fit-contain rounded-0"
-        alt=""
-      />
-      <div class="card-body">
-        <h5 class="card-title">Lolito</h5>
-        <p class="card-text m-0 my-2">Sofá estiloso</p>
-        <div class="d-flex align-items-center price">
-          <h3>R$ 7.000,00</h3>
-          <span>R$ 14.000,00</span>
+    @for(product of productList$ | async; track $index){
+    <a type="button" (click)="redirectPage(product.id)">
+      <div class="card text-start border-0 rounded-0">
+        <img
+          [ngSrc]="product.images[0]"
+          class="card-img-top object-fit-contain rounded-0"
+          alt=""
+          width="285"
+          height="285"
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text m-0 my-2">{{ product.cardDescription }}</p>
+          <div class="d-flex align-items-center price">
+            <h3>{{ product.price | price }}</h3>
+            <span>{{ product.price | discount : product.discount }}</span>
+          </div>
         </div>
       </div>
-    </div>
+    </a>
     }
   </div>
 

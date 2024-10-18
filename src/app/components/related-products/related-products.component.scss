@@ -24,11 +24,12 @@ button {
   padding-inline: var(--padding-inline);
   overflow-y: auto;
   .card {
-    max-width: 285px;
+    min-width: 285px;
     color: var(--black-150);
     .card-body {
       background-color: var(--background-grey);
       row-gap: 8px;
+      height: 184px;
       h5 {
         font-size: 24px;
         font-weight: 600 !important;
