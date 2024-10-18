@@ -1,0 +1,108 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "price": 3920.45,
+      "discount": {
+        "type": "PERCENTAGE",
+        "amount": 30
+      },
+      "socials": {
+        "instagram": "https://instagram.com/product1",
+        "facebook": "https://facebook.com/product1",
+        "youtube": null,
+        "twitter": "https://twitter.com/product1",
+        "linkedin": "https://linkedin.com/in/product1"
+      },
+      "images": [
+        "assets/product/sofa-1.png",
+        "assets/product/sofa-2.png",
+        "assets/product/sofa-3.png"
+      ],
+      "sizes": ["XP", "P", "G", "XG"],
+      "colors": ["#816DFA", "#000000", "#B88E2F"],
+      "metadata": [
+        { "key": "SKU", "value": "SS001" },
+        { "key": "Categoria", "value": "Sofás" },
+        { "key": "Tags", "value": "Sofá, Chair, Home, Shop" }
+      ]
+    },
+    {
+      "id": 3,
+      "price": 2499.99,
+      "discount": {
+        "type": "PERCENTAGE",
+        "amount": 30
+      },
+      "socials": {
+        "instagram": null,
+        "facebook": "https://facebook.com/product2",
+        "youtube": "https://youtube.com/product2",
+        "twitter": null,
+        "linkedin": "https://linkedin.com/in/product2"
+      },
+      "images": [
+        "assets/product/desk-1.webp",
+        "assets/product/desk-2.webp",
+        "assets/product/desk-3.webp"
+      ],
+      "sizes": ["P", "M", "G"],
+      "colors": ["#FFFFFF", "#F0F0F0", "#FFD700"],
+      "metadata": [
+        { "key": "SKU", "value": "CH002" },
+        { "key": "Categoria", "value": "Cadeiras" },
+        { "key": "Tags", "value": "Chair, Furniture, Office" }
+      ]
+    },
+    {
+      "id": 3,
+      "price": 1899.5,
+      "discount": {
+        "type": "PERCENTAGE",
+        "amount": 30
+      },
+      "socials": {
+        "instagram": "https://instagram.com/product3",
+        "facebook": null,
+        "youtube": null,
+        "twitter": "https://twitter.com/product3",
+        "linkedin": null
+      },
+      "images": ["assets/product/sofa-1.webp", "assets/product/sofa-2.webp"],
+      "sizes": ["Único"],
+      "colors": ["#8B4513", "#D2B48C"],
+      "metadata": [
+        { "key": "SKU", "value": "TB003" },
+        { "key": "Categoria", "value": "Mesas" },
+        { "key": "Tags", "value": "Mesa, Dining, Furniture" }
+      ]
+    },
+    {
+      "id": 4,
+      "price": 12999.0,
+      "discount": {
+        "type": "PERCENTAGE",
+        "amount": 30
+      },
+      "socials": {
+        "instagram": "https://instagram.com/product4",
+        "facebook": "https://facebook.com/product4",
+        "youtube": "https://youtube.com/product4",
+        "twitter": "https://twitter.com/product4",
+        "linkedin": "https://linkedin.com/in/product4"
+      },
+      "images": [
+        "assets/product/sofa-3.webp",
+        "assets/product/sofa-3.png",
+        "assets/product/desk-4.png"
+      ],
+      "sizes": ["Casal", "Queen", "King"],
+      "colors": ["#FFDAB9", "#8A2BE2"],
+      "metadata": [
+        { "key": "SKU", "value": "BD004" },
+        { "key": "Categoria", "value": "Camas" },
+        { "key": "Tags", "value": "Bed, Sleep, Home, Comfort" }
+      ]
+    }
+  ]
+}
