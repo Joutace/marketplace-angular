@@ -20,13 +20,16 @@
   }
   .list-group {
     gap: 32px;
+    overflow: hidden;
     a {
+      overflow: hidden;
       border-radius: var(--radius);
     }
     img {
       cursor: pointer;
       width: 76px;
       height: 80px;
+      overflow: hidden;
     }
   }
 }
@@ -122,4 +125,34 @@
   background-color: transparent;
   border-radius: 15px;
   border: solid 1px var(--black);
+}
+
+.data {
+  gap: 8px;
+  margin-bottom: 8px;
+
+  p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    margin: 0 !important;
+    color: var(--gray-320);
+  }
+  img {
+    cursor: pointer;
+  }
+
+  .key {
+    min-width: 120px;
+    text-align: right;
+  }
+
+  .separator {
+    margin: 0 4px;
+  }
+
+  .value {
+    flex: 1;
+    text-align: left;
+  }
 }

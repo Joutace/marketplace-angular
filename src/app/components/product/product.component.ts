@@ -1,32 +1,77 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnInit, signal } from '@angular/core';
+import {
+  CommonModule,
+  NgOptimizedImage,
+  ViewportScroller,
+} from '@angular/common';
+import {
+  Component,
+  computed,
+  DestroyRef,
+  inject,
+  Input,
+  input,
+  OnInit,
+  signal,
+} from '@angular/core';
+import { map, Observable } from 'rxjs';
+import { IProductData } from '../../interfaces/common.interface';
+import { PricePipe } from '../../pipes/price.pipe';
+import { ProductService } from '../../services/product.service';
+import { ProductDetailsComponent } from '../product-details/product-details.component';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, PricePipe, NgOptimizedImage, ProductDetailsComponent],
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss',
 })
 export class ProductComponent implements OnInit {
+  @Input() productId: string = '';
+  private productService = inject(ProductService);
+  private route = inject(ActivatedRoute);
+  private viewport = inject(ViewportScroller);
   protected _mainImage = signal('');
   protected _selectedColor = signal('#816DFA');
   protected _selectedSize = signal('');
+  protected productAmount = 1;
 
-  sizes = ['XP', 'P', 'G', 'XG'];
-  colors = ['#816DFA', '#000000', '#B88E2F'];
-  amount = 1;
-  elementClicked = 'Click any of the list item below';
+  productData$: Observable<IProductData> | undefined;
 
-  images = [
-    'assets/product/sofa-1.png',
-    'assets/product/sofa-2.png',
-    'assets/product/sofa-3.png',
-    'assets/product/sofa-4.png',
+  socials = [
+    'assets/icons/fb.svg',
+    'assets/icons/in.svg',
+    'assets/icons/tt.svg',
   ];
-  ngOnInit(): void {
-    //TODO: Fetch images from API
-    this._mainImage.set(this.images[0]);
+  constructor() {
+    this.route.params.subscribe((val) => this.getProductById());
+  }
+
+  ngOnInit(): void {}
+
+  getProductById() {
+    const id = this.route.snapshot.paramMap.get('id');
+    this.productId = id ?? '1';
+    this.productData$ = this.productService.getProductById(this.productId).pipe(
+      map((response) => {
+        console.log(response);
+        this._mainImage.set(response.images[0]);
+        this.productService._productData.set(response);
+        return response;
+      })
+    );
+  }
+
+  addToCart(id: string, price: number) {
+    const payload = {
+      id: id,
+      color: this._selectedColor(),
+      size: this._selectedSize(),
+      price,
+      amount: this.productAmount,
+    };
+    console.log(payload);
   }
 
   expandImg(src: string) {

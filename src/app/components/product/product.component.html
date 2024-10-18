@@ -1,23 +1,36 @@
 <div class="d-flex row">
-  <div class="d-flex justify-content-center col-sm-12 images">
+  @if (productData$ | async; as productData) {
+  <div class="d-flex justify-content-center col-auto images">
     <div class="d-flex list-group">
-      @for (item of images; track $index) {
+      @for (item of productData.images; track $index) {
       <a
         [ngStyle]="{ 'background-color': _selectedColor() }"
         (click)="_mainImage.set(item)"
       >
-        <img [src]="item" class="object-fit-contain" alt="" />
+        <img
+          [ngSrc]="item"
+          width="30"
+          height="30"
+          class="object-fit-contain"
+          alt=""
+        />
       </a>
       }
     </div>
     <div class="main-img" [ngStyle]="{ 'background-color': _selectedColor() }">
-      <img [src]="_mainImage()" class="object-fit-contain" alt="" />
+      <img
+        [ngSrc]="_mainImage()"
+        class="object-fit-contain"
+        alt=""
+        width="500"
+        height="422"
+      />
     </div>
   </div>
-  <div class="d-inline-flex justify-content-center col-lg-6 col-sm-12 info">
+  <div class="d-inline-flex justify-content-center col info">
     <div>
       <h1 class="name">Sofá de madeira</h1>
-      <span class="price">R$ 3.000,00</span>
+      <span class="price">{{ productData.price | price }}</span>
 
       <div class="d-flex justify-content-between rating">
         <div style="width: 124px; height: 20px"></div>
@@ -36,7 +49,7 @@
           <p>Tamanho</p>
 
           <ul class="nav nav-list gap-3">
-            @for (size of sizes; track $index) {
+            @for (size of productData.sizes; track $index) {
             <li class="d-flex align-items-center justify-content-center">
               <a (click)="selectSize(size)"> {{ size }} </a>
             </li>
@@ -47,7 +60,7 @@
           <p>Cor</p>
 
           <ul class="nav nav-list gap-3">
-            @for (color of colors; track $index) {
+            @for (color of productData.colors; track $index) {
             <a (click)="setColor(color)">
               <li
                 class="d-flex align-items-center justify-content-center rounded-circle"
@@ -61,15 +74,58 @@
           <div
             class="d-inline-flex align-items-center border rounded p-2 amount"
           >
-            <a class="px-3" (click)="amount = amount - 1"> - </a>
-            <p class="m-0 px-2">{{ amount }}</p>
-            <a class="px-3" (click)="amount = amount + 1"> + </a>
+            <a
+              class="px-3"
+              (click)="
+                productAmount <= 1 ? null : (productAmount = productAmount - 1)
+              "
+            >
+              -
+            </a>
+            <p class="m-0 px-2">{{ productAmount }}</p>
+            <a class="px-3" (click)="productAmount = productAmount + 1"> + </a>
           </div>
-          <button class="align-items-center add-cart">
+          <button
+            class="align-items-center add-cart"
+            type="button"
+            (click)="addToCart(productData.id, productData.price)"
+          >
             Adicionar à sacola
           </button>
         </div>
       </div>
+
+      <div
+        class="d-block w-100 justify-content-start border-top text-align-middle mt-5 pt-3"
+      >
+        @for (item of productData.metadata; track $index) { @if(item.key !==
+        'socials'){
+
+        <div class="d-flex gap-2 align-items-center data">
+          <p class="key">{{ item.key }}</p>
+          <p class="separator">:</p>
+          <p class="value">{{ item.value }}</p>
+        </div>
+        } @else {
+
+        <div class="d-flex gap-2 data">
+          <p class="key">{{ item.key }}</p>
+          <p class="separator">:</p>
+          @for (item of socials; track $index) {
+          <img
+            [ngSrc]="item"
+            class="object-fit-contain"
+            alt=""
+            height="25"
+            width="25"
+          />
+          }
+        </div>
+        } }
+      </div>
     </div>
   </div>
+
+  <app-product-details />
+  }
 </div>
