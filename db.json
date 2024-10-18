@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "price": 3920.45,
       "discount": {
         "type": "PERCENTAGE",
@@ -28,7 +28,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "2",
       "price": 2499.99,
       "discount": {
         "type": "PERCENTAGE",
@@ -55,7 +55,7 @@
       ]
     },
     {
-      "id": 3,
+      "id": "3",
       "price": 1899.5,
       "discount": {
         "type": "PERCENTAGE",
@@ -78,7 +78,7 @@
       ]
     },
     {
-      "id": 4,
+      "id": "4",
       "price": 12999.0,
       "discount": {
         "type": "PERCENTAGE",
@@ -94,7 +94,7 @@
       "images": [
         "assets/product/sofa-3.webp",
         "assets/product/sofa-3.png",
-        "assets/product/desk-4.png"
+        "assets/product/desk-4.webp"
       ],
       "sizes": ["Casal", "Queen", "King"],
       "colors": ["#FFDAB9", "#8A2BE2"],
