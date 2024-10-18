@@ -1,32 +1,36 @@
-export interface ApiGetById<T> {
-  success: boolean;
-  output: T;
-}
-
 export interface IProductData {
   id: string;
+  name: string;
   price: number;
-  socials?: SocialMedia;
+  shortDescription: string;
+  cardDescription: string;
+  description: string;
+  aditionalInfo: string;
+  discount: Discount;
+  socials: SocialMedia;
   images: string[];
   sizes: string[];
   colors: string[];
-  discount: {
-    type: string;
-    amount: number;
-  };
+  reviews: Review[];
   metadata: ProductMetadata[];
 }
 
+export interface Discount {
+  type: 'percentage' | 'absolute';
+  amount: number;
+}
+
 export interface SocialMedia {
-  instagram: string | null;
-  facebook: string | null;
-  youtube: string | null;
-  twitter: string | null;
-  linkedin: string | null;
+  [key: string]: string | null;
+}
+
+export interface Review {
+  customerName: string;
+  review: number;
+  reviewMessage: string;
 }
 
 export interface ProductMetadata {
   key: string;
   value: string;
-  socials: SocialMedia;
 }

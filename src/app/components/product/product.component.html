@@ -1,5 +1,5 @@
 <div class="d-flex row">
-  @if (productData$ | async; as productData) {
+  @if (productData$ | async; as productData ) {
   <div class="d-flex justify-content-center col-auto images">
     <div class="d-flex list-group">
       @for (item of productData.images; track $index) {
@@ -29,19 +29,17 @@
   </div>
   <div class="d-inline-flex justify-content-center col info">
     <div>
-      <h1 class="name">Sofá de madeira</h1>
+      <h1 class="name">{{ productData.name }}</h1>
       <span class="price">{{ productData.price | price }}</span>
 
       <div class="d-flex justify-content-between rating">
         <div style="width: 124px; height: 20px"></div>
         <div class="divider"></div>
-        <a>5 reviews</a>
+        <a>{{ productData.reviews.length }} reviews</a>
       </div>
       <div class="description">
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut
-          mi sed nisl mollis consequat non nec eros. Aenean cursus, purus in
-          blandit lacinia, erat mi rutrum nisi, at condimentum elit nisl a nunc
+          {{ productData.shortDescription }}
         </p>
       </div>
       <div class="selection">
@@ -98,30 +96,34 @@
       <div
         class="d-block w-100 justify-content-start border-top text-align-middle mt-5 pt-3"
       >
-        @for (item of productData.metadata; track $index) { @if(item.key !==
-        'socials'){
-
+        @for (item of productData.metadata; track $index) {
         <div class="d-flex gap-2 align-items-center data">
           <p class="key">{{ item.key }}</p>
           <p class="separator">:</p>
           <p class="value">{{ item.value }}</p>
         </div>
-        } @else {
-
-        <div class="d-flex gap-2 data">
-          <p class="key">{{ item.key }}</p>
+        }
+        <div class="d-flex gap-2 align-items-center data">
+          <p class="key">Redes Sociais</p>
           <p class="separator">:</p>
-          @for (item of socials; track $index) {
-          <img
-            [ngSrc]="item"
-            class="object-fit-contain"
-            alt=""
-            height="25"
-            width="25"
-          />
-          }
+          <div class="d-flex gap-2">
+            <a
+              *ngFor="
+                let social of productData.socials | socialMedia : socialIconsMap
+              "
+              [href]="social.link"
+              target="_blank"
+            >
+              <img
+                [src]="social.icon"
+                class="object-fit-contain"
+                [alt]="social.platform"
+                height="25"
+                width="25"
+              />
+            </a>
+          </div>
         </div>
-        } }
       </div>
     </div>
   </div>

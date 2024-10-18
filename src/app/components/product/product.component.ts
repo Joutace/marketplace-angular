@@ -19,11 +19,18 @@ import { PricePipe } from '../../pipes/price.pipe';
 import { ProductService } from '../../services/product.service';
 import { ProductDetailsComponent } from '../product-details/product-details.component';
 import { ActivatedRoute } from '@angular/router';
+import { SocialMediaPipe } from '../../pipes/socials.pipe';
 
 @Component({
   selector: 'app-product',
   standalone: true,
-  imports: [CommonModule, PricePipe, NgOptimizedImage, ProductDetailsComponent],
+  imports: [
+    CommonModule,
+    PricePipe,
+    NgOptimizedImage,
+    SocialMediaPipe,
+    ProductDetailsComponent,
+  ],
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss',
 })
@@ -39,11 +46,12 @@ export class ProductComponent implements OnInit {
 
   productData$: Observable<IProductData> | undefined;
 
-  socials = [
-    'assets/icons/fb.svg',
-    'assets/icons/in.svg',
-    'assets/icons/tt.svg',
-  ];
+  socialIconsMap = {
+    facebook: 'assets/icons/fb.svg',
+    linkedin: 'assets/icons/in.svg',
+    twitter: 'assets/icons/tt.svg',
+    youtube: 'assets/icons/yt.svg',
+  };
   constructor() {
     this.route.params.subscribe((val) => this.getProductById());
   }
