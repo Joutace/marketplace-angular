@@ -2,15 +2,18 @@
   "products": [
     {
       "id": "1",
+      "name": "Sofá Conforto",
       "price": 3920.45,
+      "shortDescription": "Sofá moderno e confortável para sua sala.",
+      "cardDescription": "Sofá de 3 lugares com acabamento em linho.",
+      "description": "Este sofá é ideal para quem busca conforto e estilo. Fabricado com materiais de alta qualidade, oferece excelente durabilidade e beleza.",
+      "aditionalInfo": "Feito com madeira sustentável e revestido em tecido de linho.",
       "discount": {
-        "type": "PERCENTAGE",
+        "type": "percentage",
         "amount": 30
       },
       "socials": {
-        "instagram": "https://instagram.com/product1",
         "facebook": "https://facebook.com/product1",
-        "youtube": null,
         "twitter": "https://twitter.com/product1",
         "linkedin": "https://linkedin.com/in/product1"
       },
@@ -21,6 +24,18 @@
       ],
       "sizes": ["XP", "P", "G", "XG"],
       "colors": ["#816DFA", "#000000", "#B88E2F"],
+      "reviews": [
+        {
+          "customerName": "João Silva",
+          "review": 5,
+          "reviewMessage": "Produto excelente, superou minhas expectativas!"
+        },
+        {
+          "customerName": "Ana Costa",
+          "review": 4,
+          "reviewMessage": "Muito bom, mas poderia ser mais macio."
+        }
+      ],
       "metadata": [
         { "key": "SKU", "value": "SS001" },
         { "key": "Categoria", "value": "Sofás" },
@@ -29,15 +44,18 @@
     },
     {
       "id": "2",
+      "name": "Cadeira Ergonômica",
       "price": 2499.99,
+      "shortDescription": "Cadeira ergonômica ideal para o escritório.",
+      "cardDescription": "Cadeira ajustável com suporte lombar.",
+      "description": "Projetada para oferecer conforto e suporte durante longas horas de trabalho. A estrutura ajustável garante a postura correta.",
+      "aditionalInfo": "Ajuste de altura e inclinação, revestimento respirável.",
       "discount": {
-        "type": "PERCENTAGE",
-        "amount": 30
+        "type": "percentage",
+        "amount": 20
       },
       "socials": {
-        "instagram": null,
         "facebook": "https://facebook.com/product2",
-        "youtube": "https://youtube.com/product2",
         "twitter": null,
         "linkedin": "https://linkedin.com/in/product2"
       },
@@ -48,6 +66,18 @@
       ],
       "sizes": ["P", "M", "G"],
       "colors": ["#FFFFFF", "#F0F0F0", "#FFD700"],
+      "reviews": [
+        {
+          "customerName": "Carlos Menezes",
+          "review": 4,
+          "reviewMessage": "Bom custo-benefício, mas o acabamento poderia ser melhor."
+        },
+        {
+          "customerName": "Fernanda Lima",
+          "review": 5,
+          "reviewMessage": "Cadeira muito confortável!"
+        }
+      ],
       "metadata": [
         { "key": "SKU", "value": "CH002" },
         { "key": "Categoria", "value": "Cadeiras" },
@@ -56,21 +86,31 @@
     },
     {
       "id": "3",
+      "name": "Mesa de Jantar Compacta",
       "price": 1899.5,
+      "shortDescription": "Mesa compacta ideal para pequenos espaços.",
+      "cardDescription": "Mesa com acabamento em madeira nobre.",
+      "description": "Feita com madeira nobre e resistente a umidade, esta mesa é perfeita para refeições em ambientes compactos.",
+      "aditionalInfo": "Inclui revestimento resistente a manchas.",
       "discount": {
-        "type": "PERCENTAGE",
-        "amount": 30
+        "type": "absolute",
+        "amount": 300
       },
       "socials": {
-        "instagram": "https://instagram.com/product3",
         "facebook": null,
-        "youtube": null,
         "twitter": "https://twitter.com/product3",
         "linkedin": null
       },
       "images": ["assets/product/sofa-1.webp", "assets/product/sofa-2.webp"],
       "sizes": ["Único"],
       "colors": ["#8B4513", "#D2B48C"],
+      "reviews": [
+        {
+          "customerName": "Paula Souza",
+          "review": 5,
+          "reviewMessage": "A mesa é linda e muito prática!"
+        }
+      ],
       "metadata": [
         { "key": "SKU", "value": "TB003" },
         { "key": "Categoria", "value": "Mesas" },
@@ -79,15 +119,18 @@
     },
     {
       "id": "4",
+      "name": "Cama King Size",
       "price": 12999.0,
+      "shortDescription": "Cama espaçosa com design moderno.",
+      "cardDescription": "Cama com suporte reforçado e estofado premium.",
+      "description": "Esta cama oferece o máximo de conforto e espaço para noites perfeitas. Fabricada com estrutura reforçada.",
+      "aditionalInfo": "Inclui cabeceira e suporte para colchão.",
       "discount": {
-        "type": "PERCENTAGE",
-        "amount": 30
+        "type": "percentage",
+        "amount": 15
       },
       "socials": {
-        "instagram": "https://instagram.com/product4",
         "facebook": "https://facebook.com/product4",
-        "youtube": "https://youtube.com/product4",
         "twitter": "https://twitter.com/product4",
         "linkedin": "https://linkedin.com/in/product4"
       },
@@ -98,6 +141,18 @@
       ],
       "sizes": ["Casal", "Queen", "King"],
       "colors": ["#FFDAB9", "#8A2BE2"],
+      "reviews": [
+        {
+          "customerName": "Marcos Almeida",
+          "review": 5,
+          "reviewMessage": "A cama é maravilhosa e muito confortável!"
+        },
+        {
+          "customerName": "Rita Lopes",
+          "review": 4,
+          "reviewMessage": "Ótimo produto, mas o preço é um pouco alto."
+        }
+      ],
       "metadata": [
         { "key": "SKU", "value": "BD004" },
         { "key": "Categoria", "value": "Camas" },
