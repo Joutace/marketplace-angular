@@ -24,7 +24,7 @@ button {
   padding-inline: var(--padding-inline);
   overflow-y: auto;
   .card {
-    min-width: 285px;
+    width: 285px;
     color: var(--black-150);
     .card-body {
       background-color: var(--background-grey);

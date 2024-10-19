@@ -80,8 +80,10 @@
     color: var(--gray-320);
   }
   ul li {
-    width: 30px;
+    width: auto;
+    min-width: 30px;
     height: 30px;
+    padding-inline: 4px;
     border-radius: 5px;
     background-color: var(--background-wheat);
   }
@@ -125,6 +127,13 @@
   background-color: transparent;
   border-radius: 15px;
   border: solid 1px var(--black);
+}
+
+.add-cart:hover {
+  background-color: #8080802d;
+}
+.add-cart:active {
+  transform: translateY(1px);
 }
 
 .data {
