@@ -34,3 +34,13 @@ export interface ProductMetadata {
   key: string;
   value: string;
 }
+
+export interface ICartPayload {
+  name: string;
+  id: string;
+  color: string;
+  size: string;
+  price: number;
+  amount: number;
+  thumbnail: string;
+}
