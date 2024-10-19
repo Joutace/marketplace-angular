@@ -1,15 +1,17 @@
-header h1 {
-  font-size: 34px;
-  font-weight: 700;
-  line-height: 41.45px;
-  text-align: left;
-  font-family: var(--font-title) !important;
+header {
   padding-inline: 100px;
+  h1 {
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 41.45px;
+    text-align: left;
+    font-family: var(--font-title) !important;
+  }
 }
 
 .nav-list {
   max-width: 430px;
-  gap: 75px;
+
   display: flex;
   margin-bottom: 0;
 
@@ -20,9 +22,86 @@ header h1 {
     line-height: 24px;
     color: var(--black);
   }
+  li {
+    .cart {
+      top: 0;
+      right: 0;
+      position: absolute;
+      z-index: 8;
+      opacity: 0;
+      transform: translateY(-20px);
+      pointer-events: none;
+      background-color: var(--white);
+      height: 80dvh;
+      width: 417px;
+      transition: opacity 0.3s linear, transform 0.3s linear;
+    }
+  }
+  li:hover .cart {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
 }
 
-.icons {
-  gap: 45px;
-  padding-right: 100px;
+.cart-list {
+  width: 248px;
+  max-height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  span p {
+    padding-left: 6px;
+    font-weight: 600;
+    color: var(--primary);
+    margin: 0;
+  }
+}
+
+.rounded {
+  border-radius: 12px;
+}
+
+.footer {
+  span {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    margin-right: 50%;
+  }
+
+  p {
+    color: var(--primary);
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 0;
+  }
+
+  .actions {
+    button {
+      padding-inline: 20px;
+      background-color: transparent;
+      height: 30px;
+      border: solid 1px var(--black);
+      border-radius: 20px;
+    }
+    & :hover {
+      background-color: #b88f2f29;
+    }
+    & :active {
+      transform: translateY(1px);
+    }
+  }
+}
+
+@media screen and (max-width: 991px) {
+  header h1 {
+    padding: 0;
+  }
 }
