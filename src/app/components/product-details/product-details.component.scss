@@ -22,6 +22,11 @@
     font-weight: 500;
     line-height: 36px;
   }
+
+  li a.active {
+    color: var(--black);
+    font-weight: 700 !important;
+  }
 }
 .description {
   max-width: 1026px;
@@ -40,4 +45,15 @@
     max-width: 605px;
     border-radius: 20px;
   }
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.active {
+  color: red;
+  font-weight: bold;
 }

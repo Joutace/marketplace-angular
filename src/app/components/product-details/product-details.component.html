@@ -1,20 +1,68 @@
-<div class="border-top pt-4">
+<div class="border-top pt-4 mt-4">
   <div class="d-flex justify-content-evenly align-items-center pages">
     <ul class="nav nav-list">
-      <li><a href="#">Descrição</a></li>
-      <li><a href="#">Informações Adicionais</a></li>
-      <li><a href="#">Reviews @if(true) { [5]} </a></li>
+      <li>
+        <a
+          (click)="_selectedComponent.set('description')"
+          [class.active]="_selectedComponent() === 'description'"
+        >
+          Descrição
+        </a>
+      </li>
+      <li>
+        <a
+          (click)="_selectedComponent.set('info')"
+          [class.active]="_selectedComponent() === 'info'"
+        >
+          Informações Adicionais
+        </a>
+      </li>
+      <li>
+        <a
+          (click)="_selectedComponent.set('reviews')"
+          [class.active]="_selectedComponent() === 'reviews'"
+        >
+          Reviews {{ 5 }}
+        </a>
+      </li>
     </ul>
   </div>
 
-  <div class="d-flex justify-content-center text-justify py-4">
+  @if(_selectedComponent() === 'description'){
+  <div class="d-flex w-100 justify-content-center text-justify py-4">
     <div class="description">
-      <p [innerHTML]="description"></p>
+      <p [innerHTML]="productData.description"></p>
     </div>
   </div>
 
-  <div class="d-flex justify-content-center gap-3 images">
-    <img src="assets/img/image-2.png" class="object-fit-contain" alt="" />
-    <img src="assets/img/image-2.png" class="object-fit-contain" alt="" />
+  <div class="d-flex w-100 justify-content-center gap-3 px-3 images">
+    @for (image of productData.images | slice: 0:2; track $index) {
+    <img
+      [ngSrc]="image"
+      class="object-fit-cover"
+      alt=""
+      height="348"
+      width="50"
+    />
+    }
   </div>
+  } @if(_selectedComponent() === 'info'){
+  <div class="d-flex w-100 justify-content-center text-justify py-4">
+    <div class="description">
+      <p [innerHTML]="productData.aditionalInfo"></p>
+    </div>
+  </div>
+  } @if(_selectedComponent() === 'reviews'){ @for (review of
+  productData.reviews; track $index) {
+
+  <div class="d-flex w-100 justify-content-start text-justify py-4">
+    <div class="d-flex flex-column w-100 justify-content-start gap-3 px-3">
+      <div class="d-flex gap-4">
+        <p [innerHTML]="review.customerName"></p>
+        <p>{{ review.review }}</p>
+      </div>
+      <p>{{ review.reviewMessage }}</p>
+    </div>
+  </div>
+  } }
 </div>

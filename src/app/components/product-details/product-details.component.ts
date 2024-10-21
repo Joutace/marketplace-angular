@@ -1,13 +1,23 @@
-import { Component } from '@angular/core';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
+import { AfterViewInit, Component, inject, Input, signal } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { IProductData } from '../../interfaces/common.interface';
 
 @Component({
   selector: 'app-product-details',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, NgOptimizedImage],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.scss',
 })
-export class ProductDetailsComponent {
-  description =
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut mi sed nisl mollis consequat non nec eros. Aenean cursus, purus in blandit lacinia, erat mi rutrum nisi. <br /> <br />Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ut mi sed nisl mollis consequat non nec eros. Aenean cursus, purus in blandit lacinia, erat mi rutrum nisi, at condimentum elit nisl a nunc. Aliquam erat volutpat. Sed id vehicula eros. Nulla facilisi. Donec efficitur, tortor a sollicitudin elementum, ipsum metus feugiat massa, non lobortis ipsum tellus at elit. Quisque nec efficitur dui. Morbi auctor, sem et cursus interdum, est eros tincidunt nisi, id iaculis ligula eros a enim. Nunc id.';
+export class ProductDetailsComponent implements AfterViewInit {
+  @Input({ required: true })
+  productData!: IProductData;
+
+  public _selectedComponent = signal('description');
+  public _productData = signal(this.productData);
+
+  ngAfterViewInit() {
+    this._productData.set(this.productData);
+  }
 }
