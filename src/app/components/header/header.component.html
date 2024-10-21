@@ -1,17 +1,14 @@
-<div>
-  <header
-    style="height: 100px"
-    class="d-flex align-items-center justify-content-between py-3 w-100"
-  >
-    <h1>VR Shopping</h1>
-
+<header class="d-flex align-items-center justify-content-between py-3 w-100">
+  <h1>VR Shopping</h1>
+  <nav class="desktop-nav">
     <ul class="nav nav-list justify-content-between" style="width: 430px">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Shop</a></li>
-      <li><a href="#">Sobre</a></li>
-      <li><a href="#">Contato</a></li>
+      <li><a>Home</a></li>
+      <li><a>Shop</a></li>
+      <li><a>Sobre</a></li>
+      <li><a>Contato</a></li>
     </ul>
-
+  </nav>
+  <div class="d-flex align-items-center">
     <ul class="nav nav-list icons justify-content-between gap-4">
       <li>
         <img src="assets/icons/acc-alert.svg" alt="" width="28" height="28" />
@@ -23,19 +20,31 @@
         <img src="assets/icons/heart.svg" alt="" width="28" height="28" />
       </li>
       <li class="cart-hover">
-        <img src="assets/icons/cart.svg" alt="" width="28" height="28" />
+        <div class="position-relative">
+          <img src="assets/icons/cart.svg" alt="" width="28" height="28" />
+          <span
+            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+          >
+            {{ cartService.products().length }}
+          </span>
+        </div>
         <div class="cart d-flex flex-column p-4">
           <div
             class="d-flex align-items-center justify-content-between w-100 mb-3"
           >
             <h1 class="border-bottom w-100 pb-3">Minha sacola</h1>
-            <img
-              class="ms-3"
-              ngSrc="assets/icons/remove.svg"
-              alt="Close"
-              width="20"
-              height="20"
-            />
+            <button
+              type="button"
+              class="btn btn-link p-0 ms-2"
+              (click)="cartService.products.set([])"
+            >
+              <img
+                ngSrc="assets/icons/clear-cart.svg"
+                alt="Remove"
+                width="20"
+                height="20"
+              />
+            </button>
           </div>
 
           <div class="d-flex flex-column flex-grow-1 overflow-auto">
@@ -92,5 +101,5 @@
         </div>
       </li>
     </ul>
-  </header>
-</div>
+  </div>
+</header>

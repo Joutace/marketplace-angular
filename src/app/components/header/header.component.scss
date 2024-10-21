@@ -1,4 +1,6 @@
 header {
+  width: 100vw;
+  height: 100px;
   padding-inline: 100px;
   h1 {
     font-size: 34px;
@@ -7,6 +9,11 @@ header {
     text-align: left;
     font-family: var(--font-title) !important;
   }
+}
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
 }
 
 .nav-list {
@@ -97,6 +104,12 @@ header {
     & :active {
       transform: translateY(1px);
     }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .desktop-nav {
+    display: none;
   }
 }
 
