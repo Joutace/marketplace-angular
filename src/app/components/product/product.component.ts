@@ -35,7 +35,7 @@ import { CartService } from '../../services/cart.service';
   templateUrl: './product.component.html',
   styleUrl: './product.component.scss',
 })
-export class ProductComponent implements OnInit {
+export class ProductComponent {
   @Input() productId: string = '';
   private productService = inject(ProductService);
   private cartService = inject(CartService);
@@ -57,8 +57,6 @@ export class ProductComponent implements OnInit {
   constructor() {
     this.route.params.subscribe((val) => this.getProductById());
   }
-
-  ngOnInit(): void {}
 
   getProductById() {
     const id = this.route.snapshot.paramMap.get('id');
