@@ -1,3 +1,13 @@
+export interface ICartPayload {
+  name: string;
+  id: string;
+  color: string;
+  size: string;
+  price: number;
+  amount: number;
+  thumbnail: string;
+}
+
 export interface IProductData {
   id: string;
   name: string;
@@ -15,11 +25,6 @@ export interface IProductData {
   metadata: ProductMetadata[];
 }
 
-export interface Discount {
-  type: 'percentage' | 'absolute';
-  amount: number;
-}
-
 export interface SocialMedia {
   [key: string]: string | null;
 }
@@ -30,17 +35,12 @@ export interface Review {
   reviewMessage: string;
 }
 
+export interface Discount {
+  type: 'percentage' | 'absolute';
+  amount: number;
+}
+
 export interface ProductMetadata {
   key: string;
   value: string;
-}
-
-export interface ICartPayload {
-  name: string;
-  id: string;
-  color: string;
-  size: string;
-  price: number;
-  amount: number;
-  thumbnail: string;
 }
